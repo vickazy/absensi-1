@@ -7,9 +7,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '192.168.10.10',
-	'username' => 'homestead',
-	'password' => 'secret',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
 	'database' => 'sistem_presensi',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
