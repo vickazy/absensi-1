@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$config['base_url'] = 'http://locahost/projek_absensi';
+$config['base_url'] = 'http://locahost/projek_absensi/';
 
 $config['uri_protocol']	= 'REQUEST_URI';
 
