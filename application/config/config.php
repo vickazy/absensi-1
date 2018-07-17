@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$config['base_url'] = 'http://localhost:1212/Pencatatan_Hutang/';
+$config['base_url'] = 'http://absensi.projek.com/';
 
 $config['uri_protocol']	= 'REQUEST_URI';
 

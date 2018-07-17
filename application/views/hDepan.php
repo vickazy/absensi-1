@@ -23,7 +23,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatibl" content="IE=edge">
-    <title>Admin pencatatan hutang</title>
+    <title>Absensi</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -54,11 +54,11 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url()?>Teller/tampilhalamandepan_teller" class="logo">
+        <a href="<?php echo base_url()?>Home/tampil" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>Admin</b>panel</span>
+            <span class="logo-mini"><b>Admin</b>Absen</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>HUUU </b>TANG</span>
+            <span class="logo-lg"><b>SISTEM  </b>ABSENSI</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -82,16 +82,49 @@
                 <li class="header" style="color:white;">MAIN NAVIGATION</li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="glyphicon glyphicon-user"></i> <span>Hutang</span>
+                        <i class="glyphicon glyphicon-user"></i> <span>Data Absen</span>
                         <span class="pull-right-container">
                                  <i class="fa fa-angle-left pull-right"></i>
                                  </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?php echo base_url()?>hutang/tampil"><i class="glyphicon glyphicon-record"></i> + Data Hutang </a></li>
-                        <li><a href="<?php echo base_url()?>hutang/tampilblunas"><i class="glyphicon glyphicon-record"></i> Hutang Belum Lunas </a></li>
-                        <li><a href="<?php echo base_url()?>hutang/tampilunas"><i class="glyphicon glyphicon-record"></i> Hutang Lunas</a></li>
-                    </ul>
+                      <li><a href="<?php echo base_url()?>Home/tampilmahasiswa"><i class="glyphicon glyphicon-record"></i> Data Mahasiswa</a></li>
+                      <li><a href="<?php echo base_url()?>Home/tampildosen"><i class="glyphicon glyphicon-record"></i> Data Dosen</a></li>
+                      <li class="treeview">
+                        <a href="#"><i class="glyphicon glyphicon-record"></i> Presensi
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu">
+                          <li><a href="<?php echo base_url()?>Home/tampillaporandosen"><i class="fa fa-circle-o"></i> Presensi Dosen</a></li>
+                          <li><a href="<?php echo base_url()?>Home/inputpresensiMahasiswa"><i class="fa fa-circle-o"></i> Presensi Mahasiswa</a></li>
+                        </ul>
+                      </li>
+            <li class="treeview">
+                <li class="treeview">
+                  <a href="#"><i class="glyphicon glyphicon-record"></i> Laporan
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url()?>Home/tampillaporandosen"><i class="fa fa-circle-o"></i> Laporan Dosen</a></li>
+                    <li><a href="<?php echo base_url()?>Home/tampillaporan"><i class="fa fa-circle-o"></i> Laporan Mahasiswa</a></li>
+                  </ul>
+                </li>
+              <!-- </ul> -->
+            </li>
+            <li></ul>
+                    <!-- <ul class="treeview-menu">
+                        <li><a href="<?php echo base_url()?>Home/tampilmahasiswa"><i class="glyphicon glyphicon-record"></i> Data Mahasiswa</a></li>
+                        <li><a href="<?php echo base_url()?>Home/tampildosen"><i class="glyphicon glyphicon-record"></i> Data Dosen</a></li>
+                        <li><a href="<?php echo base_url()?>Home/tampilunas"><i class="glyphicon glyphicon-record"></i> Presensi</a></li>
+                        <li><a href="<?php echo base_url()?>Home/tampilunas"><i class="glyphicon glyphicon-record">  <span class="pull-right-container">
+                                   <i class="fa fa-angle-left pull-right"></i>
+                                   </span></i> Laporan</a>
+                        </li>
+                    </ul> -->
                 </li>
 
                 <li>
@@ -118,79 +151,31 @@
             <div class="box">
                 <div class="box-body">
                     <div class="box-header with-border">
-                        <center><h3 class="box-title">Pencatatan Hutang</h3></center>
+                        <center><h3 class="box-title">Sistem Informasi Absensi</h3></center>
                         <div class="box-tools pull-right">
                         </div>
                     </div>
                     <div class="box-body">
                         <center>
-                            Admin Panel Hutang
+                            Admin Absensi
                         </center>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <center>
-                            U never forget
+                          Tugas Akhir 2018
                         </center>
                     </div>
                 </div>
                 <div class="box">
                 </div>
                 <div class="box">
-                    <form class="form-horizontal" action="<?php echo base_url()?>Hutang/tambah" method="post" onsubmit="return required();">
-                        <div class="box-body">
-                            <div class="form-group">
-                                <div class="col-sm-6">
-                                    <input type="hidden" class="form-control" id="inputEmail3"
-                                           name="isi" placeholder="isi" required="true">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-3 control-label">Nama</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="inputEmail3"
-                                           name="nama"  required="true">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Digunakan untuk</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="inputEmail3"
-                                           name="untuk"  required="true">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-3 control-label">Jumlah</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="jumlah"
-                                           name="jumlah"  required="true">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Tanggal</label>
-                                <div class="input-group date" >
-                                    <div class="col-sm-12">
-                                        <input type="date" class="form-control pull-right" id="tanggal"
-                                               name="tanggal" max="<?= date('Y-m-d') ;?>" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-3 control-label">Status</label>
-                                <div class="col-sm-6">
-                                    <select id="rencana_pembayaran_per" name="keterangan" class="form-control">
-                                        <option value="belum lunas">Belum Lunas</option>
-                                        <option value="lunas">Lunas</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer">
-                            <button type="submit" class="btn btn-info pull-right">Save</button>
-                        </div>
-                        <!-- /.box-footer -->
-                    </form>
+                    <center><h1>SELAMAT DATANG!</h1></center>
+                    <BR><center><h1>Sistem Presensi ini dibuat untuk menyelesaikan</h1></center>
+                      <BR><center><h1>proyek tugas akhir jurusan Teknik Elektro</h1></center>
+                        <BR><center><h1>di Politeknik Negeri Jakarta</h1></center>
+                          <BR><center><h1></h1></center>
+                            <BR><center><h1></h1></center>
                     <!-- /.box-footer-->
                 </div>
                 <!-- /.box -->
@@ -204,7 +189,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.4.0
         </div>
-        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+        <strong>Copyright &copy; 2017-2018 <a href="https://adminlte.io">Tim TA Bu Pur 2018</a>.</strong> All rights
         reserved.
     </footer>
 

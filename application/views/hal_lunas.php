@@ -100,13 +100,13 @@
         <section class="content">
             <div class="box">
                 <div class="box-header with-border">
-                    <center><h3 class="box-title"> PENCATATAN HUTANG</h3></center>
+                    <center><h3 class="box-title"> SISTEM PRESENSI</h3></center>
                     <div class="box-tools pull-right">
                     </div>
                 </div>
                 <div class="box-body">
                     <center>
-                        ADMIN PANEL HUTANG
+                        ADMIN PANEL PRESENSI
                     </center>
                 </div>
                 <!-- /.box-body -->
@@ -122,7 +122,7 @@
                     <!-- Horizontal Form -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">DATA LUNAS</h3>
+                            <h3 class="box-title">DATA MAHASISWA</h3>
                         </div>
                         <form class="form-horizontal">
                             <div class="box-body">
@@ -131,12 +131,9 @@
                                     <thead>
                                     <tr>
                                     <tr style="background-color: darkslateblue">
-                                        <th><center><strong><font style="color: #ffffff">NAMA</font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">KEBUTUHAN</font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">JUMLAH </font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">TANGGAL</font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">KETERANGAN</font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">AKSI</font></strong></center></th>
+                                        <th><center><strong><font style="color: #ffffff">NIM</font></strong></center></th>
+                                        <th><center><strong><font style="color: #ffffff">POLA JARI</font></strong></center></th>
+                                        <th><center><strong><font style="color: #ffffff">NAMA MAHASISWA </font></strong></center></th>
                                     </tr>
                                     </tr>
                                     </thead>
@@ -146,11 +143,9 @@
                                     foreach ($lunas->result() as $value) {
                                         ?>
                                         <tr>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->nama; ?></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->untuk; ?></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->jumlah; ?></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->tanggal; ?></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->keterangan; ?></font></strong></center></td>
+                                            <td><center><strong><font style="color: #000000"><?php echo $value->NIM_Mahasiswa; ?></font></strong></center></td>
+                                            <td><center><strong><font style="color: #000000"><?php echo $value->Pola_Jari; ?></font></strong></center></td>
+                                            <td><center><strong><font style="color: #000000"><?php echo $value->Nama_Mahasiswa; ?></font></strong></center></td>
                                             <th>
                                                 <center>
                                                     <a class="btn btn-danger" >Hapus</a>

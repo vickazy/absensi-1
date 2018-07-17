@@ -131,12 +131,9 @@
                                     <thead>
                                     <tr>
                                     <tr style="background-color: darkslateblue">
-                                        <th><center><strong><font style="color: #ffffff">NAMA</font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">KEBUTUHAN</font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">JUMLAH </font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">TANGGAL</font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">KETERANGAN</font></strong></center></th>
-                                        <th><center><strong><font style="color: #ffffff">AKSI</font></strong></center></th>
+                                      <th><center><strong><font style="color: #ffffff">NIM</font></strong></center></th>
+                                      <th><center><strong><font style="color: #ffffff">POLA JARI</font></strong></center></th>
+                                      <th><center><strong><font style="color: #ffffff">NAMA MAHASISWA </font></strong></center></th>
                                     </tr>
                                     </tr>
                                     </thead>
@@ -146,15 +143,15 @@
                                     foreach ($blunas->result() as $value) {
                                         ?>
                                         <tr>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->nama; ?></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->untuk; ?></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->jumlah; ?></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->tanggal; ?></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->keterangan; ?></font></strong></center></td>
+                                          // $value->NIP_Dosen itu buat ngambil datanya, berdasarkan nama kolom, yang ada di table
+                                          
+                                          <td><center><strong><font style="color: #000000"><?php echo $value->NIP_Dosen; ?></font></strong></center></td>
+                                          <td><center><strong><font style="color: #000000"><?php echo $value->Pola_Jari; ?></font></strong></center></td>
+                                          <td><center><strong><font style="color: #000000"><?php echo $value->Nama_Dosen; ?></font></strong></center></td>
                                             <th>
-                                                <center>
+                                                <!-- <center>
                                                     <a class="btn btn-info" href="<?php echo base_url() ?>hutang/pelunasan/<?php echo $value->id ?>" >Lunas</a>
-                                                </center>
+                                                </center> -->
                                             </th>
                                         </tr>
                                         <?php $id++;  } ?>
