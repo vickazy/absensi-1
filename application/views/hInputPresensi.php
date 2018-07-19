@@ -121,11 +121,18 @@
                         Input Presensi
                         </center>
                     </div>
+                    <?php if($alert) { ?>
+                        <div class="box-footer">
+                            <div class="alert alert-danger"> 
+                                <center><?php echo $alert ?></center>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="box">
                 </div>
                 <div class="box">
-                    <form class="form-horizontal" action="<?php echo base_url()?>Home/cekdatamahasiswa" method="post" onsubmit="return required();">
+                    <form class="form-horizontal" action="<?php echo base_url()?>Home/presensi_mahasiswa_post" method="post" onsubmit="return required();">
                         <div class="box-body">
                             <div class="form-group">
                                 <div class="col-sm-6">
@@ -136,8 +143,8 @@
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-3 control-label">Pola Jari</label>
                                 <div class="col-sm-6">
-                                    <input type="file" class="form-control"
-                                           name="Pola_Jari"  required="true">
+                                    <input type="text" class="form-control"
+                                           name="pola_jari"  required="true">
                                 </div>
                             <!-- </div>
                             <div class="form-group">

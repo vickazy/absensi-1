@@ -147,15 +147,15 @@
                                     foreach ($lunas->result() as $value) {
                                         ?>
                                         <tr>
-                                          <td><center><strong><font style="color: #000000"><?php echo $value->Tanggal; ?></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><img  src='".base_url('upload/'.$value->Pola_Jari)."'></font></strong></center></td>
-                                            <td><center><strong><font style="color: #000000"><?php echo $value->NIM_Mahasiswa; ?></font></strong></center></td>
+                                          <td><center><strong><font style="color: #000000"><?php echo $value->tanggal_jam ?></font></strong></center></td>
+                                            <td><center><strong><font style="color: #000000"><?php echo $value->Pola_Jari ?></font></strong></center></td>
+                                            <td><center><strong><font style="color: #000000"><?php echo $value->NIM; ?></font></strong></center></td>
                                             <td><center><strong><font style="color: #000000"><?php echo $value->Nama_Mahasiswa; ?></font></strong></center></td>
                                             <th>
                                                 <center>
-                                                  <a href="<?php echo base_url() ?>Home/deleteMahasiswa/<?php echo $value->NIM_Mahasiswa ?>" class="btn btn-danger btn-md">
+                                                  <a href="<?php echo base_url() ?>Home/deleteMahasiswa/<?php echo $value->NIM ?>" class="btn btn-danger btn-md">
                                                     <span class="glyphicon glyphicon-trash"></span>
-                                                  <a href="<?php echo base_url() ?>Home/editMahasiswa/<?php echo $value->NIM_Mahasiswa ?>" class="btn btn-success btn-md">
+                                                  <a href="<?php echo base_url() ?>Home/editMahasiswa/<?php echo $value->NIM ?>" class="btn btn-success btn-md">
                                                     <span class="glyphicon glyphicon-pencil"></span>
                                                     <a/>
                                                 </center>

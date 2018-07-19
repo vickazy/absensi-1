@@ -35,7 +35,8 @@
 
         public function inputpresensiMahasiswa()
         {
-            $this->load->view('hInputPresensi');
+            $alert = array('alert' => null);
+            $this->load->view('hInputPresensi',$alert);
         }
 
         public function inputlaporanMahasiswa()
@@ -120,7 +121,8 @@
             redirect("Home/tampildosen");
 
 
-        }
+        }            
+
         public function tambahpresensi()
         {
             $Pola_Jari = $this->input->post('Pola_Jari');
@@ -330,6 +332,29 @@
             //tutup pintu
           }
         
+        }
+
+        public function presensi_mahasiswa_post()
+        {
+            $where = array(
+              'Pola_Jari' => $this->input->post('pola_jari')
+            );
+
+            $cek = $this->m_mahasiswa->cekJariMahasiswa($where);
+            if($cek->num_rows() > 0){
+
+              foreach($cek->result() as $value){
+                $q = $this->m_presensi->tambah_presensi($value->Pola_Jari,$value->NIM_Mahasiswa,$value->Nama_Mahasiswa);
+                break;
+              }
+
+              redirect("Home/tampilpresensimahasiswa");
+            }else{
+              $alert = array('alert' => "Data tidak ditemukan!");
+    
+              $this->load->view('hInputPresensi',$alert);
+
+            }    
         }
 
     }
